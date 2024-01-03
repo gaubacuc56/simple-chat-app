@@ -16,7 +16,7 @@ Run `yarn start` to start the desktop app.
 ### Features
 1. User login with Facebook or Google
 2. Create chat room
-3. Add user to chat room
+3. Invite new user to chat room
 4. Real-time message exchange
 
 ### Screenshot
