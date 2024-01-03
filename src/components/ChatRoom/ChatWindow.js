@@ -1,7 +1,7 @@
 import { UserAddOutlined } from '@ant-design/icons';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { Button, Tooltip, Avatar, Form, Input, Alert } from 'antd';
+import { Button, Tooltip, Avatar, Form, Input, Alert, Typography } from 'antd';
 
 import Message from './Message';
 import { AppContext } from '../../Context/AppProvider';
@@ -220,13 +220,9 @@ export default function ChatWindow() {
           </ContentStyled>
         </>
       ) : (
-        <Alert
-          message='Select a room'
-          type='info'
-          showIcon
-          style={{ margin: 5 }}
-          closable
-        />
+        <div style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <Typography.Text style={{ fontSize: '30px', color: '#A3AED0', fontWeight: 600 }}>Choose a room to start your chat</Typography.Text>
+        </div>
       )}
     </WrapperStyled>
   );
