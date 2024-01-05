@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Avatar, Typography, Tooltip } from 'antd';
+import { Avatar, Typography, Tooltip } from 'antd';
 import styled from 'styled-components';
 
 import { auth } from '../../firebase/config';
@@ -45,21 +45,6 @@ export default function UserInfo() {
           }}
         />
       </Tooltip>
-      {/* <Button
-        style={{
-          borderRadius: '15px',
-          fontWeight: '600'
-        }}
-        danger
-        type="primary"
-        onClick={() => {
-          // clear state in App Provider when logout
-          clearState();
-          auth.signOut();
-        }}
-      >
-        Log Out
-      </Button> */}
     </WrapperStyled>
   );
 }
