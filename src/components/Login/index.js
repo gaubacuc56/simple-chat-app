@@ -27,7 +27,7 @@ export default function Login() {
 
   return (
     <Row justify='center' style={{ height: '100vh', paddingTop: '20%' }}>
-      <Col span={8}>
+      <Col xs={16} xl={8}>
         <Title style={{ textAlign: 'center' }} level={3}>
           Simple Chat
         </Title>
