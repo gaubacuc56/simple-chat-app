@@ -12,6 +12,11 @@ const SidebarStyled = styled.div`
   margin-left: 35px;
   border-radius: 40px;
   position: relative;
+  @media only screen and (max-width: 1200px) {
+  & {
+    margin: 15px;
+    height: 90vh;
+  }
 `;
 
 export default function Sidebar() {

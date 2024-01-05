@@ -8,6 +8,7 @@ export default function AppProvider({ children }) {
   const [isAddRoomVisible, setIsAddRoomVisible] = useState(false);
   const [isInviteMemberVisible, setIsInviteMemberVisible] = useState(false);
   const [selectedRoomId, setSelectedRoomId] = useState('');
+  const [showMenu, setShowMenu] = useState(false);
 
   const {
     user: { uid },
@@ -41,6 +42,7 @@ export default function AppProvider({ children }) {
     setSelectedRoomId('');
     setIsAddRoomVisible(false);
     setIsInviteMemberVisible(false);
+    setShowMenu(false);
   };
 
   return (
@@ -56,6 +58,8 @@ export default function AppProvider({ children }) {
         isInviteMemberVisible,
         setIsInviteMemberVisible,
         clearState,
+        showMenu,
+        setShowMenu
       }}
     >
       {children}

@@ -1,11 +1,11 @@
 import React from 'react';
-import { Button, Avatar, Typography } from 'antd';
+import { Button, Avatar, Typography, Tooltip } from 'antd';
 import styled from 'styled-components';
 
 import { auth } from '../../firebase/config';
 import { AuthContext } from '../../Context/AuthProvider';
 import { AppContext } from '../../Context/AppProvider';
-
+import { PoweroffOutlined } from '@ant-design/icons';
 const WrapperStyled = styled.div`
   display: flex;
   justify-content: space-between;
@@ -33,7 +33,19 @@ export default function UserInfo() {
         </Avatar>
         <Typography.Text className='username'>{displayName}</Typography.Text>
       </div>
-      <Button
+      <Tooltip title="Log Out">
+        <PoweroffOutlined onClick={() => {
+          // clear state in App Provider when logout
+          clearState();
+          auth.signOut();
+        }}
+          style={{
+            color: 'red',
+            fontSize: '18px',
+          }}
+        />
+      </Tooltip>
+      {/* <Button
         style={{
           borderRadius: '15px',
           fontWeight: '600'
@@ -47,7 +59,7 @@ export default function UserInfo() {
         }}
       >
         Log Out
-      </Button>
+      </Button> */}
     </WrapperStyled>
   );
 }

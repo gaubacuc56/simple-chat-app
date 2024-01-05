@@ -6,6 +6,11 @@ import { formatRelative } from 'date-fns/esm';
 const WrapperStyled = styled.div`
   width: 320px;
   margin-bottom: 20px;
+  /* @media only screen and (max-width: 1200px) {
+      & {
+        width: 200px;
+      }
+  } */
   .author {
     margin-left: 5px;
     font-weight: bold;
@@ -15,6 +20,11 @@ const WrapperStyled = styled.div`
     margin-left: 10px;
     font-size: 11px;
     color: #a7a7a7;
+    @media only screen and (max-width: 1200px) {
+      & {
+        display: none;
+      }
+    }
   }
 
   .content {
@@ -38,7 +48,12 @@ function formatDate(seconds) {
 
 export default function Message({ text, displayName, createdAt, photoURL, isMyMessage }) {
   return (
-    <WrapperStyled style={{ alignSelf: isMyMessage ? 'flex-end' : 'flex-start' }}>
+    <WrapperStyled style={{
+      alignSelf: isMyMessage ? 'flex-end' : 'flex-start',
+      display: isMyMessage ? 'flex' : '',
+      alignItems: isMyMessage ? 'flex-end' : '',
+      flexDirection: isMyMessage ? 'column' : '',
+    }}>
       <div>
         <Avatar size='small' src={photoURL}>
           {photoURL ? '' : displayName?.charAt(0)?.toUpperCase()}

@@ -22,14 +22,17 @@ const HeaderStyled = styled.div`
       flex-direction: column;
       justify-content: center;
       margin-left: 10px;
-      max-width: 800px;
+      max-width: 50%;
     }
 
     &__title {
       margin: 0;
       font-weight: bold;
       color: #11047a;
-      font-size: 16px
+      font-size: 16px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     &__description {
@@ -54,6 +57,12 @@ const WrapperStyled = styled.div`
   margin: 20px;
   margin-right: 35px;
   border-radius: 40px;
+  @media only screen and (max-width: 1200px) {
+  & {
+    margin: 15px;
+    height: 90vh;
+  }
+}
 `;
 
 const ContentStyled = styled.div`
@@ -93,8 +102,12 @@ const ChatBox = styled.div`
       background-color: #422afb;
       border-radius: 1rem;
   }
+  @media only screen and (max-width: 1200px) {
+    & {
+        padding: 10px;
+    }
+  }
 `
-
 
 export default function ChatWindow() {
   const { selectedRoom, members, setIsInviteMemberVisible } =
@@ -229,7 +242,7 @@ export default function ChatWindow() {
         </>
       ) : (
         <div style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <Typography.Text style={{ fontSize: '30px', color: '#A3AED0', fontWeight: 600 }}>Choose a room to start your chat</Typography.Text>
+          <Typography.Text style={{ fontSize: '30px', color: '#A3AED0', fontWeight: 600, textAlign: 'center' }}>Choose a room to start your chat</Typography.Text>
         </div>
       )}
     </WrapperStyled>
