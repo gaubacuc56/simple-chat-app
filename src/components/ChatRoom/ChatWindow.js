@@ -1,7 +1,7 @@
 import { UserAddOutlined } from '@ant-design/icons';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { Button, Tooltip, Avatar, Form, Input, Alert, Typography } from 'antd';
+import { Button, Tooltip, Avatar, Form, Input, Typography } from 'antd';
 
 import Message from './Message';
 import { AppContext } from '../../Context/AppProvider';
