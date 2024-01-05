@@ -65,10 +65,10 @@ export default function AddRoomModal() {
       }}
     >
       <Form form={form} layout='vertical'>
-        <Form.Item label='Room name' name='name' >
+        <Form.Item label='Room name' name='name' style={{ fontWeight: 600 }} >
           <Input style={{ borderRadius: '10px' }} placeholder='Enter room name' required status={formStatus.includes('name') ? 'error' : ''} />
         </Form.Item>
-        <Form.Item label='Room description' name='description'>
+        <Form.Item label='Room description' name='description' style={{ fontWeight: 600 }}>
           <Input.TextArea style={{ borderRadius: '10px' }} placeholder='Enter room description' required status={formStatus.includes('description') ? 'error' : ''} />
         </Form.Item>
       </Form>

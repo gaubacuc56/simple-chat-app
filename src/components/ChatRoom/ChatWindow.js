@@ -79,6 +79,22 @@ const FormStyled = styled(Form)`
   }
 `;
 
+const ChatBox = styled.div`
+  max-height: 92%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  padding-left: 30px;
+  &::-webkit-scrollbar{
+      width: 0.35rem;
+    }
+  &::-webkit-scrollbar-thumb{
+      background-color: #422afb;
+      border-radius: 1rem;
+  }
+`
+
 
 export default function ChatWindow() {
   const { selectedRoom, members, setIsInviteMemberVisible } =
@@ -171,15 +187,7 @@ export default function ChatWindow() {
             </ButtonGroupStyled>
           </HeaderStyled>
           <ContentStyled>
-            <div
-              style={{
-                maxHeight: '100%',
-                overflowY: 'auto',
-                display: 'flex',
-                flexDirection: 'column',
-                padding: '11px 50px'
-              }}
-              ref={messageListRef}>
+            <ChatBox ref={messageListRef}>
               {messages.map((mes) => (
                 <Message
                   key={mes.id}
@@ -190,7 +198,7 @@ export default function ChatWindow() {
                   isMyMessage={uid === mes.uid}
                 />
               ))}
-            </div>
+            </ChatBox>
             <FormStyled form={form}>
               <Form.Item name='message'>
                 <Input
