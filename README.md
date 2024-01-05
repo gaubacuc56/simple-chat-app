@@ -24,5 +24,8 @@ Run `yarn start` to start the desktop app.
 ### Screenshot
 
 ![image](https://github.com/gaubacuc56/simple-chat-app/assets/76199289/a38d73b4-f7d8-4dc8-93d3-8c009570bc80)
-![image](https://github.com/gaubacuc56/simple-chat-app/assets/76199289/65263623-a483-496c-9ca7-f58e4f33cef5)
-![image](https://github.com/gaubacuc56/simple-chat-app/assets/76199289/a53672c9-c5e6-47d2-b0a3-1e38bd675ba4)
+![image](https://github.com/gaubacuc56/simple-chat-app/assets/76199289/4a5913f6-e521-4914-8cd3-25fed5dff1dd)
+![image](https://github.com/gaubacuc56/simple-chat-app/assets/76199289/4defb955-76f4-4ffc-b34a-29051e7aab60)
+![image](https://github.com/gaubacuc56/simple-chat-app/assets/76199289/d1cb4caa-b83c-4f05-9ed2-a58c3f585a18)
+
+
