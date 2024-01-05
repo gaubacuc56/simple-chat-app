@@ -205,7 +205,7 @@ export default function ChatWindow() {
                   ref={inputRef}
                   onChange={handleInputChange}
                   onPressEnter={handleOnSubmit}
-                  placeholder='Nhập tin nhắn...'
+                  placeholder='Type your message...'
                   bordered={false}
                   autoComplete='off'
                 />
