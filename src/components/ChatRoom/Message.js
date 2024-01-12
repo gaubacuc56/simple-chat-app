@@ -1,7 +1,7 @@
-import React from 'react';
-import { Avatar, Typography } from 'antd';
-import styled from 'styled-components';
-import { formatRelative } from 'date-fns/esm';
+import React from "react";
+import { Avatar, Typography } from "antd";
+import styled from "styled-components";
+import { formatRelative } from "date-fns/esm";
 
 const WrapperStyled = styled.div`
   width: 320px;
@@ -30,11 +30,13 @@ const WrapperStyled = styled.div`
   .content {
     color: black;
     margin-left: 30px;
+    line-break: anywhere;
+    max-width: 100%;
   }
 `;
 
 function formatDate(seconds) {
-  let formattedDate = '';
+  let formattedDate = "";
 
   if (seconds) {
     formattedDate = formatRelative(new Date(seconds * 1000), new Date());
@@ -46,24 +48,32 @@ function formatDate(seconds) {
   return formattedDate;
 }
 
-export default function Message({ text, displayName, createdAt, photoURL, isMyMessage }) {
+export default function Message({
+  text,
+  displayName,
+  createdAt,
+  photoURL,
+  isMyMessage,
+}) {
   return (
-    <WrapperStyled style={{
-      alignSelf: isMyMessage ? 'flex-end' : 'flex-start',
-      display: isMyMessage ? 'flex' : '',
-      alignItems: isMyMessage ? 'flex-end' : '',
-      flexDirection: isMyMessage ? 'column' : '',
-    }}>
+    <WrapperStyled
+      style={{
+        alignSelf: isMyMessage ? "flex-end" : "flex-start",
+        display: isMyMessage ? "flex" : "",
+        alignItems: isMyMessage ? "flex-end" : "",
+        flexDirection: isMyMessage ? "column" : "",
+      }}
+    >
       <div>
-        <Avatar size='small' src={photoURL}>
-          {photoURL ? '' : displayName?.charAt(0)?.toUpperCase()}
+        <Avatar size="small" src={photoURL}>
+          {photoURL ? "" : displayName?.charAt(0)?.toUpperCase()}
         </Avatar>
-        <Typography.Text className='author'>{displayName}</Typography.Text>
-        <Typography.Text className='date'>
+        <Typography.Text className="author">{displayName}</Typography.Text>
+        <Typography.Text className="date">
           {formatDate(createdAt?.seconds)}
         </Typography.Text>
       </div>
-      <div className='content'>{text}</div>
+      <div className="content">{text}</div>
     </WrapperStyled>
   );
 }
